@@ -69,6 +69,9 @@ cat file.json | ach from json > file.ach
 
 Note: when more formats are added all this will look better :)
 
+[Back to: Table of Contents](#table-of-contents)
+
+
 ## Use API
 
 `ach` has three main functions to start with
@@ -76,6 +79,8 @@ Note: when more formats are added all this will look better :)
 1. create() - used to generate an ACH file object with a series of calls
 2. wrap() - wraps an already built ACH file object to be used with create()'s API
 3. from() - used to start specifying a stream pipeline to parse/format
+
+[Back to: Table of Contents](#table-of-contents)
 
 
 ### API: create()
@@ -162,6 +167,8 @@ ach.wrap achObject
 # the `achObject` has all changes made by function calls
 ```
 
+[Back to: Table of Contents](#table-of-contents)
+
 ## Using from().edit().to()
 
 The goal is to setup a pipeline of stream transforms which parse an input stream, optionally edit the parsed object, then format the object back into a string and output it.
@@ -177,6 +184,8 @@ An example pipeline:
 3. optionally, some editing transform provided by user which receives the object, edits it, and passes it on
 4. 'ach' format stream formatter (writer) which converts the object to a string
 5. the final writer, maybe a file writer
+
+[Back to: Table of Contents](#table-of-contents)
 
 ### API: from()
 
@@ -195,6 +204,8 @@ The object (#4) can have:
     * string - string content must be in a format compatible with a known parser
     * object - an ACH object to send into the pipeline
 
+[Back to: Table of Contents](#table-of-contents)
+
 ### API: edit()
 
 Valid argument for `edit()` is an array. Array elements must be:
@@ -203,6 +214,8 @@ Valid argument for `edit()` is an array. Array elements must be:
   2. a Transform class
   3. an instance of a Transform
   4. an object with implementation functions for Transform constructor
+
+[Back to: Table of Contents](#table-of-contents)
 
 ### API: to()
 
@@ -218,6 +231,8 @@ The object (#3) can have:
 * target - the output target may be:
     * stream - a Writable object, or process.stdout (the default)
     * function - a listener to receive either the object or string. If a format is specified then the listener receives a string in that format. Without a specified format it receives the ACH object.
+
+[Back to: Table of Contents](#table-of-contents)
 
 ### API Examples
 
