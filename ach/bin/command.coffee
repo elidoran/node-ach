@@ -14,9 +14,16 @@
 ach = require('../lib')()
 
 # options:
+#  -v --version     : show name+version and exit
 #  -i --input from  : input format, default is ACH
 #  -o --output to   : output format, default is ACH
 #  -e --edit edit   : a transform to edit the object
+
+# the whole "report the version" thing
+if process.argv[2] in [ '-v', '--version' ]
+  pkg = require '../package.json'
+  console.log pkg.name, pkg.version
+  process.exit 0
 
 # hold the settings from args
 inFormat  = null
