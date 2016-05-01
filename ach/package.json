@@ -1,7 +1,7 @@
 {
   "name": "@ach/ach",
   "version": "0.1.0",
-  "description": "NACHA ACH EFT File Parser/Formatter for CCD+ / PPD+ / CTX+",
+  "description": "NACHA ACH EFT File Parser/Editor/Formatter for CCD+ / PPD+ / CTX+",
   "keywords": [
     "eft",
     "ach",
