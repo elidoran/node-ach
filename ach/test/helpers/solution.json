@@ -1,0 +1,197 @@
+{
+ "file": {
+   "recordType": "1",
+   "priority": 1,
+   "destination": " 081000032",
+   "origin": " 018036281",
+   "creationDate": "150304",
+   "creationTime": "2207",
+   "idModifier": "A",
+   "recordSize": "094",
+   "blockingFactor": "10",
+   "formatCode": "1",
+   "destinationName": "Some Bank",
+   "originName": "Your Company Inc",
+   "referenceCode": "#A000001",
+   "footer": {
+     "recordType": "9",
+     "batchCount": 3,
+     "blockCount": 4,
+     "entryAndAddendaCount": 6,
+     "entryHash": 50600106,
+     "totalDebit": 15000,
+     "totalCredit": 26820,
+     "reserved": ""
+   }
+ },
+ "batches": [
+   {
+     "entries": [
+       {
+         "recordType": "6",
+         "transactionCode": "22",
+         "receivingDFIIdentification": "08100021",
+         "checkDigit": 0,
+         "dfiAccount": "12345678901234567",
+         "amount": 3521,
+         "identificationNumber": "RAj##23920rjf31",
+         "receivingCompanyName": "John Doe",
+         "discretionaryData": "A1",
+         "addendaIndicator": "0",
+         "traceNumber": 81000030000000
+       },
+       {
+         "recordType": "6",
+         "transactionCode": "22",
+         "receivingDFIIdentification": "08100021",
+         "checkDigit": 0,
+         "dfiAccount": "5654221",
+         "amount": 2300,
+         "identificationNumber": "RAj##32b1kn1bb3",
+         "receivingCompanyName": "Bob Dole",
+         "discretionaryData": "A1",
+         "addendaIndicator": "0",
+         "traceNumber": 81000030000001
+       },
+       {
+         "recordType": "6",
+         "transactionCode": "22",
+         "receivingDFIIdentification": "08100021",
+         "checkDigit": 0,
+         "dfiAccount": "5654221",
+         "amount": 2499,
+         "identificationNumber": "RAj##765kn4",
+         "receivingCompanyName": "Adam Something",
+         "discretionaryData": "A1",
+         "addendaIndicator": "0",
+         "traceNumber": 81000030000002
+       },
+       {
+         "recordType": "6",
+         "transactionCode": "22",
+         "receivingDFIIdentification": "08100021",
+         "checkDigit": 0,
+         "dfiAccount": "5654221",
+         "amount": 1000,
+         "identificationNumber": "RAj##3j43kj4",
+         "receivingCompanyName": "James Bond",
+         "discretionaryData": "A1",
+         "addendaIndicator": "0",
+         "traceNumber": 81000030000003
+       }
+     ],
+     "recordType": "5",
+     "serviceClassCode": "220",
+     "companyName": "Your Company Inc",
+     "discretionaryData": "",
+     "companyId": "0018036281",
+     "entryClassCode": "CCD",
+     "description": "TrnsNickna",
+     "date": "Mar 5",
+     "effectiveDate": "150305",
+     "settlementDate": "",
+     "originatorStatusCode": "1",
+     "originatingDFIIdentification": "08100003",
+     "num": 0,
+     "footer": {
+       "recordType": "8",
+       "serviceClassCode": "220",
+       "entryAndAddendaCount": 4,
+       "entryHash": 32400084,
+       "totalDebit": 0,
+       "totalCredit": 9320,
+       "companyId": "0018036281",
+       "messageAuthenticationCode": "",
+       "reserved": "",
+       "originatingDFIIdentification": "08100003",
+       "num": 0
+     }
+   },
+   {
+     "entries": [
+       {
+         "recordType": "6",
+         "transactionCode": "22",
+         "receivingDFIIdentification": "08100021",
+         "checkDigit": 0,
+         "dfiAccount": "5654221",
+         "amount": 17500,
+         "identificationNumber": "RAj##8k765j4k32",
+         "receivingCompanyName": "Luke Skywalker",
+         "discretionaryData": "A1",
+         "addendaIndicator": "0",
+         "traceNumber": 81000030000004
+       }
+     ],
+     "recordType": "5",
+     "serviceClassCode": "220",
+     "companyName": "Your Company Inc",
+     "discretionaryData": "",
+     "companyId": "0018036281",
+     "entryClassCode": "CCD",
+     "description": "TrnsNickna",
+     "date": "Mar 16",
+     "effectiveDate": "150316",
+     "settlementDate": "",
+     "originatorStatusCode": "1",
+     "originatingDFIIdentification": "08100003",
+     "num": 1,
+     "footer": {
+       "recordType": "8",
+       "serviceClassCode": "220",
+       "entryAndAddendaCount": 1,
+       "entryHash": 8100021,
+       "totalDebit": 0,
+       "totalCredit": 17500,
+       "companyId": "0018036281",
+       "messageAuthenticationCode": "",
+       "reserved": "",
+       "originatingDFIIdentification": "08100003",
+       "num": 1
+     }
+   },
+   {
+     "entries": [
+       {
+         "recordType": "6",
+         "transactionCode": "27",
+         "receivingDFIIdentification": "10100001",
+         "checkDigit": 9,
+         "dfiAccount": "923698412584",
+         "amount": 15000,
+         "identificationNumber": "RAj##765432hj",
+         "receivingCompanyName": "Jane Doe",
+         "discretionaryData": "A1",
+         "addendaIndicator": "0",
+         "traceNumber": 81000030000005
+       }
+     ],
+     "recordType": "5",
+     "serviceClassCode": "225",
+     "companyName": "Your Company Inc",
+     "discretionaryData": "",
+     "companyId": "0018036281",
+     "entryClassCode": "PPD",
+     "description": "TrnsNickna",
+     "date": "Mar 6",
+     "effectiveDate": "150306",
+     "settlementDate": "",
+     "originatorStatusCode": "1",
+     "originatingDFIIdentification": "08100003",
+     "num": 2,
+     "footer": {
+       "recordType": "8",
+       "serviceClassCode": "225",
+       "entryAndAddendaCount": 1,
+       "entryHash": 10100001,
+       "totalDebit": 15000,
+       "totalCredit": 0,
+       "companyId": "0018036281",
+       "messageAuthenticationCode": "",
+       "reserved": "",
+       "originatingDFIIdentification": "08100003",
+       "num": 2
+     }
+   }
+ ]
+}
