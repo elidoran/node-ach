@@ -24,11 +24,14 @@ Parses and formats NACHA ACH standard CCD+/PPD+ bank transaction files.
 3. [Use API](#use-api)
     1. [create()](#api-create)
     2. [wrap()](#api-wrap)
-    3. [Using from().edit().to()](#using-from-edit-to)
+    3. [Using from().edit().to()](#using-fromeditto)
     4. [from()](#api-from)
     5. [edit()](#api-edit)
     6. [to()](#api-to)
     7. [Examples](#api-examples)
+4. [Future Plans](#future-plans)
+    1. [Additional Output Formats](#additional-output-formats)
+    2. [Additional Bank Formats](#additional-bank-formats)
 
 ## Use CLI
 
@@ -151,6 +154,8 @@ ach.from(achFile).to someFileStream
 # 2. string
 ach.from(achFile).to (string) -> console.log 'ACH File:\n', string
 ```
+
+[Back to: Table of Contents](#table-of-contents)
 
 ## API: wrap()
 
