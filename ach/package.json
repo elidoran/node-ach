@@ -24,7 +24,7 @@
   "license": "MIT",
   "scripts": {
     "compile": "coffee --bare --compile lib bin",
-    "clean": "rm -rf ./lib/*.js ./bin/command.js",
+    "clean": "rm -rf ./lib/**/**/*.js ./bin/command.js",
     "prepublish": "npm run compile",
     "postpublish": "npm run clean",
     "test": "mocha --compilers coffee:coffee-script/register --reporter spec --bail --check-leaks test/bin test/lib/**"
