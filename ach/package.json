@@ -1,6 +1,6 @@
 {
   "name": "@ach/ach",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NACHA ACH EFT File Parser/Editor/Formatter for CCD+ / PPD+ / CTX+",
   "keywords": [
     "eft",
@@ -24,7 +24,7 @@
   "license": "MIT",
   "scripts": {
     "compile": "coffee --bare --compile lib bin",
-    "clean": "rm -rf ./lib/**/**/*.js ./bin/command.js",
+    "clean": "rm -f ./bin/command.js ; find ./lib -name \"*.js\" -type f -delete",
     "prepublish": "npm run compile",
     "postpublish": "npm run clean",
     "test": "mocha --compilers coffee:coffee-script/register --reporter spec --bail --check-leaks test/bin test/lib/**"
