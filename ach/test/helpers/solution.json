@@ -16,7 +16,7 @@
    "footer": {
      "recordType": "9",
      "batchCount": 3,
-     "blockCount": 4,
+     "blockCount": 2,
      "entryAndAddendaCount": 6,
      "entryHash": 50600106,
      "totalDebit": 15000,
@@ -38,7 +38,7 @@
          "receivingCompanyName": "John Doe",
          "discretionaryData": "A1",
          "addendaIndicator": "0",
-         "traceNumber": 81000030000000
+         "traceNumber": 81000030000001
        },
        {
          "recordType": "6",
@@ -51,7 +51,7 @@
          "receivingCompanyName": "Bob Dole",
          "discretionaryData": "A1",
          "addendaIndicator": "0",
-         "traceNumber": 81000030000001
+         "traceNumber": 81000030000002
        },
        {
          "recordType": "6",
@@ -64,7 +64,7 @@
          "receivingCompanyName": "Adam Something",
          "discretionaryData": "A1",
          "addendaIndicator": "0",
-         "traceNumber": 81000030000002
+         "traceNumber": 81000030000003
        },
        {
          "recordType": "6",
@@ -77,7 +77,7 @@
          "receivingCompanyName": "James Bond",
          "discretionaryData": "A1",
          "addendaIndicator": "0",
-         "traceNumber": 81000030000003
+         "traceNumber": 81000030000004
        }
      ],
      "recordType": "5",
@@ -92,7 +92,7 @@
      "settlementDate": "",
      "originatorStatusCode": "1",
      "originatingDFIIdentification": "08100003",
-     "num": 0,
+     "num": 1,
      "footer": {
        "recordType": "8",
        "serviceClassCode": "220",
@@ -104,7 +104,7 @@
        "messageAuthenticationCode": "",
        "reserved": "",
        "originatingDFIIdentification": "08100003",
-       "num": 0
+       "num": 1
      }
    },
    {
@@ -120,7 +120,7 @@
          "receivingCompanyName": "Luke Skywalker",
          "discretionaryData": "A1",
          "addendaIndicator": "0",
-         "traceNumber": 81000030000004
+         "traceNumber": 81000030000005
        }
      ],
      "recordType": "5",
@@ -135,7 +135,7 @@
      "settlementDate": "",
      "originatorStatusCode": "1",
      "originatingDFIIdentification": "08100003",
-     "num": 1,
+     "num": 2,
      "footer": {
        "recordType": "8",
        "serviceClassCode": "220",
@@ -147,7 +147,7 @@
        "messageAuthenticationCode": "",
        "reserved": "",
        "originatingDFIIdentification": "08100003",
-       "num": 1
+       "num": 2
      }
    },
    {
@@ -163,7 +163,7 @@
          "receivingCompanyName": "Jane Doe",
          "discretionaryData": "A1",
          "addendaIndicator": "0",
-         "traceNumber": 81000030000005
+         "traceNumber": 81000030000006
        }
      ],
      "recordType": "5",
@@ -178,7 +178,7 @@
      "settlementDate": "",
      "originatorStatusCode": "1",
      "originatingDFIIdentification": "08100003",
-     "num": 2,
+     "num": 3,
      "footer": {
        "recordType": "8",
        "serviceClassCode": "225",
@@ -190,7 +190,7 @@
        "messageAuthenticationCode": "",
        "reserved": "",
        "originatingDFIIdentification": "08100003",
-       "num": 2
+       "num": 3
      }
    }
  ]
