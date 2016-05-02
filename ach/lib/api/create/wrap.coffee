@@ -24,15 +24,24 @@ module.exports = wrap = (object) ->
   # run calculate() on the object to ensure its stuff is up to date
   calculate ach:object, set:true
 
-  # get the last entry from the last batch
-  entries = object.batches[object.batches.length - 1].entries
-  lastEntry = entries[entries.length - 1]
+  if object?.batches?.length > 0
+    # get the last entry from the last batch
+    entries = object.batches[object.batches.length - 1].entries
 
-  # convert to a string so we can remove the front 8 characters
-  traceString = ('' + lastEntry.traceNumber)[-7..]
+    if entries?.length > 0
+      lastEntry = entries[entries.length - 1]
 
-  # convert to a number and add one. that's our 'entryCount'
-  data.entryCount = (Number traceString) + 1
+      # convert to a string so we can remove the front 8 characters
+      traceString = ('' + lastEntry.traceNumber)[-7..]
+
+      # convert to a number and add one. that's our 'entryCount'
+      data.entryCount = (Number traceString) + 1
+
+    else
+      data.entryCount = 0
+
+  else # set values for zero batches
+    data.entryCount = 0
 
   next =
     data: data
