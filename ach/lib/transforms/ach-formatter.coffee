@@ -78,7 +78,6 @@ module.exports = class AchFormatter extends require('stream').Transform
 
     # must have multiples of 10 for line count because blocking factor is always 10
     linesNeeded = 10 - (ach.file.footer.lineCount % 10)
-    console.log 'linesNeeded',linesNeeded, ' lineCount', ach.file.footer.lineCount,'  blockCount',ach.file.footer.blockCount
     @push nines for i in [1..linesNeeded]
 
     done()
