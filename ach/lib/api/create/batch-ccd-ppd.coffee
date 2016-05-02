@@ -65,6 +65,7 @@ createBatch = (whichKind, batchData) ->
   return next = # next step is to add entries
     credit: credit
     debit : debit
+    data  : @data
     object: ach
     validate: validate.bind ach, ach
 
