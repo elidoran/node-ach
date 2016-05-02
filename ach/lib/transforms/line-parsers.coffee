@@ -27,6 +27,7 @@ module.exports =
   5: (line, ach) -> # batch header
 
     batch = entries:[]
+    ach.batches ?= []
     ach.batches.push batch
     extractFields line, formats.batchHeader, batch
     return
@@ -35,6 +36,7 @@ module.exports =
 
     batch = ach.batches[ach.batches.length - 1]
     entry = {}
+    batch.entries ?= []
     batch.entries.push entry
     extractFields line, formats[batch.entryClassCode].entry, entry
     return
