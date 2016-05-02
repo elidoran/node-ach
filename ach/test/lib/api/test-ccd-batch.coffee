@@ -9,7 +9,8 @@ baseContext = ->
     object: # the `ach` object
       file:
         footer:
-          blockCount: 2
+          lineCount: 2
+          blockCount: 1
           batchCount: 0
           entryAndAddendaCount: 0
           entryHash: 0
@@ -74,7 +75,8 @@ describe 'test creating a ccd batch', ->
 
   describe 'changing the file footer', ->
 
-    it 'should change block count', -> assert.equal file.footer.blockCount, 4
+    it 'should change line count', -> assert.equal file.footer.lineCount, 4
+    it 'should NOT change block count', -> assert.equal file.footer.blockCount, 1
     it 'should change batch count', -> assert.equal file.footer.batchCount, 1
     it 'should NOT change entry/addenda count', -> assert.equal file.footer.entryAndAddendaCount, 0
     it 'should NOT change entryHash', -> assert.equal file.footer.entryHash, 0
@@ -104,7 +106,7 @@ describe 'test creating a ccd batch', ->
         'batch and batchFooter should have same bank DFI'
 
     it 'with same batch number as header', ->
-      assert.equal batchFooter.num, 0
+      assert.equal batchFooter.num, 1
 
     it 'should NOT change entry/addenda count', ->
       assert.equal batchFooter.entryAndAddendaCount, 0
@@ -157,4 +159,4 @@ describe 'test creating a ccd batch', ->
     assert.equal batch.discretionaryData, batchData.note
 
   it 'should set batch number', ->
-    assert.equal batch.num, 0
+    assert.equal batch.num, 1

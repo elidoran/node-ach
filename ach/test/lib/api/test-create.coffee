@@ -55,7 +55,7 @@ describe 'test creating an ach file object', ->
       assert.equal fileData.for.dfi, 12345678
       assert.equal fileData.to['some key for a target company'].dfi, 98765432
 
-    it 'with starting entry count', -> assert.equal fileData.entryCount, 0
+    it 'with starting entry count', -> assert.equal fileData.entryCount, 1
 
   describe 'creates file object', ->
 
@@ -86,8 +86,11 @@ describe 'test creating an ach file object', ->
 
   describe 'creates file footer', ->
 
+    it 'with starter line count', ->
+      assert.equal footer.lineCount, 2
+
     it 'with starter block count', ->
-      assert.equal footer.blockCount, 2
+      assert.equal footer.blockCount, 1
 
     it 'with starter batch count', ->
       assert.equal footer.batchCount, 0

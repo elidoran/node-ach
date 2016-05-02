@@ -74,15 +74,15 @@ describe 'test calculate', ->
       assert.equal result?.batchFooters?[0]?.entryHash, (98765432 + 98765432 + 12345678)
 
     it 'should set a batch number for Batch', ->
-      assert.equal ach?.batches?[0]?.num, 0
-      assert.equal result?.batchFooters?[0]?.num, 0
+      assert.equal ach?.batches?[0]?.num, 1
+      assert.equal result?.batchFooters?[0]?.num, 1
 
 
     it 'should count the entries and addendas', ->
       assert.equal result?.footer?.entryAndAddendaCount, 3 + 2 # (entries + addenda)
 
     it 'should count the lines (block count)', ->
-      assert.equal result?.footer?.blockCount, 9
+      assert.equal result?.footer?.blockCount, 1
 
     it 'should sum the credits', ->
       assert.equal result?.footer?.totalCredit, 12345 + 11335
@@ -164,8 +164,11 @@ describe 'test calculate', ->
       it 'should count the entries and addendas', ->
         assert.equal result?.footer?.entryAndAddendaCount, 3 + 2 # (entries + addenda)
 
-      it 'should count the lines (block count)', ->
-        assert.equal result?.footer?.blockCount, 9
+      it 'should count the lines (line count)', ->
+        assert.equal result?.footer?.lineCount, 9
+
+      it 'should count the blocks (10 lines, round up)', ->
+        assert.equal result?.footer?.blockCount, 1
 
       it 'should sum the credits', ->
         assert.equal result?.footer?.totalCredit, 12345 + 11335

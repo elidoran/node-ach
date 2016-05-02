@@ -106,7 +106,8 @@ describe 'test wrapping an ach file object', ->
 
   describe 'calculates file footer', ->
 
-    it 'blockCount', -> assert.equal file.footer.blockCount, 18
+    it 'lineCount', -> assert.equal file.footer.lineCount, 18
+    it 'blockCount', -> assert.equal file.footer.blockCount, 2
     it 'batch count', -> assert.equal file.footer.batchCount, 3
     it 'entry/addenda count', -> assert.equal file.footer.entryAndAddendaCount, 10
     it 'entry hash', -> assert.equal file.footer.entryHash, 249371712
@@ -121,9 +122,9 @@ describe 'test wrapping an ach file object', ->
     batch3 = batches[2]
 
     it 'batch numbers', ->
-      assert.equal batch1.num, 0
-      assert.equal batch2.num, 1
-      assert.equal batch3.num, 2
+      assert.equal batch1.num, 1
+      assert.equal batch2.num, 2
+      assert.equal batch3.num, 3
 
     it 'entryHash', ->
       assert.equal batch1.footer.entryHash, 38260603
@@ -164,9 +165,9 @@ describe 'test wrapping an ach file object', ->
     traceNumber5 = object.batches[2].entries[0].traceNumber
     traceNumber6 = object.batches[2].entries[1].traceNumber
 
-    assert.equal traceNumber1, 987654320000000
-    assert.equal traceNumber2, 987654320000001
-    assert.equal traceNumber3, 987654320000002
-    assert.equal traceNumber4, 987654320000003
-    assert.equal traceNumber5, 987654320000004
-    assert.equal traceNumber6, 987654320000005
+    assert.equal traceNumber1, 987654320000001
+    assert.equal traceNumber2, 987654320000002
+    assert.equal traceNumber3, 987654320000003
+    assert.equal traceNumber4, 987654320000004
+    assert.equal traceNumber5, 987654320000005
+    assert.equal traceNumber6, 987654320000006

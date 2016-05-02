@@ -44,6 +44,7 @@ describe 'test formatter', ->
 
   before 'split values into individual lines', (done) ->
     results   = result.split '\n'
+    # NOTE: if trouble here, make sure to update the above: solutions = length:21
     solutions = solution.split '\n'
     done()
 

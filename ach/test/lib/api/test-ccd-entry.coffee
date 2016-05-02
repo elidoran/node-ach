@@ -9,7 +9,8 @@ baseContext = ->
     object: # the `ach` object
       file:
         footer:
-          blockCount: 4
+          lineCount: 4
+          blockCount: 1
           batchCount: 1
           entryAndAddendaCount: 0
           entryHash: 0
@@ -18,19 +19,19 @@ baseContext = ->
 
       batches: [
         {
-          num: 0
+          num: 1
           entries: []
           footer:
             entryAndAddendaCount: 0
             entryHash: 0
             totalDebit: 0
             totalCredit: 0
-            num: 0
+            num: 1
         }
       ]
 
     data:
-      entryCount: 0
+      entryCount: 1
       from:
         name: 'Our Company'
         fein: '553456789' # no dash, is this the `id` with a preceeding char?
@@ -81,8 +82,11 @@ describe 'test creating a ccd entry', ->
 
     describe 'changing the file', ->
 
-      it 'to have a block count of 6', ->
-        assert.equal file.footer.blockCount, 6
+      it 'to have a line count of 6', ->
+        assert.equal file.footer.lineCount, 6
+
+      it 'to have a block count of 1', ->
+        assert.equal file.footer.blockCount, 1
 
       it 'to have an entryAndAddendaCount of 2', ->
         assert.equal file.footer.entryAndAddendaCount, 2
@@ -144,7 +148,7 @@ describe 'test creating a ccd entry', ->
       assert.equal entry.addendaIndicator, 1
 
     it 'should have correct trace number', ->
-      assert.equal entry.traceNumber, 123456780000000
+      assert.equal entry.traceNumber, 123456780000001
 
     it 'should have correct addenda record type', -> assert.equal entry.addenda.recordType, '7'
 
@@ -152,9 +156,9 @@ describe 'test creating a ccd entry', ->
 
     it 'should have correct addenda info', -> assert.equal entry.addenda.info, 'some addenda info'
 
-    it 'should have correct addenda num', -> assert.equal entry.addenda.num, 0
+    it 'should have correct addenda num', -> assert.equal entry.addenda.num, 1
 
-    it 'should have correct addenda entryNum', -> assert.equal entry.addenda.entryNum, 0
+    it 'should have correct addenda entryNum', -> assert.equal entry.addenda.entryNum, 1
 
 
 
@@ -177,8 +181,11 @@ describe 'test creating a ccd entry', ->
 
     describe 'changing the file', ->
 
-      it 'to have a block count of 6', ->
-        assert.equal file.footer.blockCount, 6
+      it 'to have a line count of 6', ->
+        assert.equal file.footer.lineCount, 6
+
+      it 'to have a block count of 1', ->
+        assert.equal file.footer.blockCount, 1
 
       it 'to have an entryAndAddendaCount of 2', ->
         assert.equal file.footer.entryAndAddendaCount, 2
@@ -240,7 +247,7 @@ describe 'test creating a ccd entry', ->
       assert.equal entry.addendaIndicator, 1
 
     it 'should have correct trace number', ->
-      assert.equal entry.traceNumber, 123456780000000
+      assert.equal entry.traceNumber, 123456780000001
 
     it 'should have correct addenda record type', -> assert.equal entry.addenda.recordType, '7'
 
@@ -248,9 +255,9 @@ describe 'test creating a ccd entry', ->
 
     it 'should have correct addenda info', -> assert.equal entry.addenda.info, 'some addenda info'
 
-    it 'should have correct addenda num', -> assert.equal entry.addenda.num, 0
+    it 'should have correct addenda num', -> assert.equal entry.addenda.num, 1
 
-    it 'should have correct addenda entryNum', -> assert.equal entry.addenda.entryNum, 0
+    it 'should have correct addenda entryNum', -> assert.equal entry.addenda.entryNum, 1
 
 
 
@@ -288,8 +295,11 @@ describe 'test creating a ccd entry', ->
 
     describe 'changing the file', ->
 
-      it 'to have a block count of 6', ->
-        assert.equal file.footer.blockCount, 8
+      it 'to have a line count of 8', ->
+        assert.equal file.footer.lineCount, 8
+
+      it 'to have a block count of 1', ->
+        assert.equal file.footer.blockCount, 1
 
       it 'to have an entryAndAddendaCount of 4', ->
         assert.equal file.footer.entryAndAddendaCount, 4
@@ -353,7 +363,7 @@ describe 'test creating a ccd entry', ->
         assert.equal creditEntry.addendaIndicator, 1
 
       it 'should have correct trace number', ->
-        assert.equal creditEntry.traceNumber, 123456780000000
+        assert.equal creditEntry.traceNumber, 123456780000001
 
       it 'should have correct addenda record type', -> assert.equal creditEntry.addenda.recordType, '7'
 
@@ -361,9 +371,9 @@ describe 'test creating a ccd entry', ->
 
       it 'should have correct addenda info', -> assert.equal creditEntry.addenda.info, 'some addenda info'
 
-      it 'should have correct addenda num', -> assert.equal creditEntry.addenda.num, 0
+      it 'should have correct addenda num', -> assert.equal creditEntry.addenda.num, 1
 
-      it 'should have correct addenda entryNum', -> assert.equal creditEntry.addenda.entryNum, 0
+      it 'should have correct addenda entryNum', -> assert.equal creditEntry.addenda.entryNum, 1
 
 
     describe 'the debit', ->
@@ -395,7 +405,7 @@ describe 'test creating a ccd entry', ->
         assert.equal debitEntry.addendaIndicator, 1
 
       it 'should have correct trace number', ->
-        assert.equal debitEntry.traceNumber, 123456780000001
+        assert.equal debitEntry.traceNumber, 123456780000002
 
       it 'should have correct addenda record type', -> assert.equal debitEntry.addenda.recordType, '7'
 
@@ -403,6 +413,6 @@ describe 'test creating a ccd entry', ->
 
       it 'should have correct addenda info', -> assert.equal debitEntry.addenda.info, 'some addenda info2'
 
-      it 'should have correct addenda num', -> assert.equal debitEntry.addenda.num, 0
+      it 'should have correct addenda num', -> assert.equal debitEntry.addenda.num, 1
 
-      it 'should have correct addenda debitEntryNum', -> assert.equal debitEntry.addenda.entryNum, 1
+      it 'should have correct addenda debitEntryNum', -> assert.equal debitEntry.addenda.entryNum, 2
