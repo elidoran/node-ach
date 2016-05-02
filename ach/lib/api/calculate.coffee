@@ -4,7 +4,7 @@ module.exports = calculate = (options) ->
   # store calculations to return. (in case options.set isnt true)
   results = footer:{}, batchFooters:[]
 
-  options.seq = entry:0
+  options.seq = entry:1
 
   # first, do the batches
   for batch,i in options.ach.batches
@@ -25,6 +25,7 @@ calculate.file = (options) ->
   footer =
     recordType: '9'
     batchCount: 0
+    # lineCount: 0 # we'll calculate both these below
     # blockCount: 0
     entryAndAddendaCount: 0
     totalDebit: 0
@@ -40,12 +41,14 @@ calculate.file = (options) ->
     footer.totalDebit           += batchFooter.totalDebit
     footer.totalCredit          += batchFooter.totalCredit
     if options.set
-      batch.num = batchFooter.num = batchIndex
+      batch.num = batchFooter.num = batchIndex + 1
 
   # file header/footer is 2, then header/footer for each batch, then each entry/addenda
   # length is 6, so, must not be longer than that.
-  footer.blockCount = (2 + (footer.batchCount * 2) + footer.entryAndAddendaCount)
-  footer.blockCount = Number "#{footer.blockCount}"[-6..]
+  # lineCount is the number of lines we have. (10 - (lineCount % 10)) is the extra lines we need
+  footer.lineCount = (2 + (footer.batchCount * 2) + footer.entryAndAddendaCount)
+  # blockCount is the (lineCount / 10) rounded up
+  footer.blockCount = Number "#{Math.ceil footer.lineCount / 10}"[-6..]
 
   # entryHash is limited to 10 characters, so, convert to string and truncate
   # by grabbing the last 10 characters

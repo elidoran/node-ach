@@ -43,7 +43,7 @@ createEntry = (whichKind, entryData) ->
       # defaults
       recordType: '7'
       type: '05'
-      num: 0
+      num: 1
       entryNum: @data.entryCount
       # only one value from data
       info: entryData.addenda
@@ -90,11 +90,13 @@ createEntry = (whichKind, entryData) ->
   if entry.addenda?
     batch.footer.entryAndAddendaCount += 2
     ach.file.footer.entryAndAddendaCount += 2
-    ach.file.footer.blockCount += 2
+    ach.file.footer.lineCount += 2
   else
     batch.footer.entryAndAddendaCount += 1
     ach.file.footer.entryAndAddendaCount += 1
-    ach.file.footer.blockCount += 1
+    ach.file.footer.lineCount += 1
+
+  ach.file.footer.blockCount = Math.ceil ach.file.footer.lineCount / 10
 
   # store the entry/addenda in the batch
   batch.entries.push entry

@@ -24,7 +24,7 @@ createBatch = (whichKind, batchData) ->
     # defaults
     recordType: '5'
     originatorStatusCode: '1' # 'originator status code'
-    num: ach.batches.length
+    num: ach.batches.length + 1
     entryClassCode: whichKind
 
     # values from `data`
@@ -44,7 +44,7 @@ createBatch = (whichKind, batchData) ->
       # serviceClassCode: leave null until we add an entry...
       companyId: @data.from.fein
       originatingDFIIdentification: @data.for.dfi
-      num: ach.batches.length
+      num: ach.batches.length + 1
 
       # starter values
       entryAndAddendaCount: 0
@@ -60,7 +60,8 @@ createBatch = (whichKind, batchData) ->
 
   # update file footer
   ach.file.footer.batchCount++
-  ach.file.footer.blockCount += 2 # 1 for batch header, 1 for batch footer
+  ach.file.footer.lineCount += 2 # 1 for batch header, 1 for batch footer
+  ach.file.footer.blockCount = Math.ceil ach.file.footer.lineCount / 10
 
   return next = # next step is to add entries
     credit: credit

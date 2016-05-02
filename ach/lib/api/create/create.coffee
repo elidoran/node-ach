@@ -16,7 +16,7 @@ module.exports = (data) ->
   if data.from.fein.length is 9 then data.from.fein = ' ' + data.from.fein
 
   # start counting entries
-  data.entryCount = 0
+  data.entryCount = 1
 
   # for the date/time we created this ACH
   now = new Date
@@ -42,7 +42,8 @@ module.exports = (data) ->
 
       footer: # starter values:
         recordType: '9'
-        blockCount: 2 # one for the file header, second for file footer
+        lineCount: 2  # one for the file header, second for file footer
+        blockCount: 1 # 10 lines is one block ...
         batchCount: 0
         entryAndAddendaCount: 0
         entryHash: 0

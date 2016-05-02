@@ -38,10 +38,10 @@ module.exports = wrap = (object) ->
       data.entryCount = (Number traceString) + 1
 
     else
-      data.entryCount = 0
+      data.entryCount = 1
 
   else # set values for zero batches
-    data.entryCount = 0
+    data.entryCount = 1
 
   next =
     data: data
