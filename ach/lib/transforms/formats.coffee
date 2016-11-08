@@ -190,3 +190,18 @@ module.exports = formats =
 
 # these are the same
 formats.PPD = formats.CCD
+
+# add the WEB format which is a variation of CCD/PPD.
+# it's mostly the same, so, copy CCD fields
+formats.WEB =
+  #  copy the CCD entry fields
+  entry: type:'6', fields: formats.CCD.entry.fields[..]
+
+  # copy the CCD addenda fields
+  addenda: type:'7', fields: formats.CCD.addenda.fields[..]
+
+# now make the 'WEB' change: discretionaryDate becomes paymentTypeCode
+field = formats.WEB.entry.fields[8] =
+  name   : 'paymentTypeCode'
+  length : 2
+  pattern: /(R|S) /
