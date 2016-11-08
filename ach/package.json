@@ -35,11 +35,12 @@
   },
   "bugs": "http://github.com/elidoran/node-ach/issues",
   "devDependencies": {
-    "coffee-script": "^1.10.0",
-    "mocha": "^2.4.5"
+    "coffee-script": "^1.11.1",
+    "mocha": "^3.1.2"
   },
   "dependencies": {
-    "each-part": "^0.8.1",
-    "strung": "^1.0.4"
+    "each-part": "^0.9.0",
+    "requireg": "^0.1.6",
+    "strung": "^1.0.5"
   }
 }
